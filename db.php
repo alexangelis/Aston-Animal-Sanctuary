@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$db = new PDO("mysql:dbname=angelisa_astonanimalsanctuary;host=localhost","angelisa","dMRWcgF6G"); 
+$db = new PDO("mysql:dbname=XXXXXXXXX;host=XXXXXXXXX","XXXXXXXXX","XXXXXXXXX"); 
 
 if(isset($_SESSION['views'])) //an h metavlhth session exei timh - ti vlepei opoios ekane login
 {
