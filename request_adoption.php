@@ -1,6 +1,6 @@
 <?php
 include 'db.php';
-include 'user_variables.php';
+include 'request_adoption_variables.php';
 
 ?>
 <!DOCTYPE html>
@@ -29,7 +29,7 @@ include 'user_variables.php';
   </div>
 
   <div class="col-6">
-  <?php include 'user_php.php'; ?>
+  <?php include 'request_adoption_php.php'; ?>
   </div>
 
   <div class="col-3 right">

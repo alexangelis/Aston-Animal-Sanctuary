@@ -1,7 +1,8 @@
 <?php
 session_start();
 
-$db = new PDO("mysql:dbname=XXXXXXXXX;host=XXXXXXXXX","XXXXXXXXX","XXXXXXXXX"); 
+$db = new PDO("mysql:dbname=angelisa_astonanimalsanctuary;host=localhost","angelisa","dMRWcgF6G"); 
+
 
 if(isset($_SESSION['views'])) //an h metavlhth session exei timh - ti vlepei opoios ekane login
 {
@@ -17,7 +18,7 @@ else    //an den exei ginei login (akoma)
 
 	$login = 10;
 
-	$query = "SELECT id, username, password FROM staff";
+	$query = "SELECT id, username, password FROM user WHERE verified = 1 AND block = 0";
 	$rows = $db->query($query); 
 
 	if (!$rows){echo '<h3><center>ERROR</center></h3>';}
@@ -29,6 +30,7 @@ else    //an den exei ginei login (akoma)
 			$user =  stripslashes($row['username']);
 			$pass =  stripslashes($row['password']);
 			$id =  stripslashes($row['id']);
+
 			if (($username == $user) && ($password == $pass))  // an isxuei h sun8hkh ginetai login
 				{
 				$login = 5;
@@ -46,7 +48,7 @@ if ($login == 5)
 }
 if ($login == 10) //an to login paramenei 10(den exei ginei login)
 {
-	include 'add_animal_1_variables.php';
+	include 'register_variables.php';
 
 ?>
 <!DOCTYPE html>
@@ -64,7 +66,7 @@ if ($login == 10) //an to login paramenei 10(den exei ginei login)
 
 <div class="header">
 
-  <h1>STAFF</h1>
+  <h1>USER</h1>
 </div>
 
 <div class="row">
